@@ -3,10 +3,11 @@ import {
   ManagerChanged as ManagerChangedEvent
 } from "../generated/Contract/Contract"
 import { RegisteredToken,InterfaceImplementerSet, ManagerChanged } from "../generated/schema"
+import { log } from '@graphprotocol/graph-ts'
 
 export function handleInterfaceImplementerSet(
   event: InterfaceImplementerSetEvent
-): void {
+): void {log.error("InterfaceImplementerSet {}", [event.params.addr.toHexString()])
   if (event.params.interfaceHash.toHexString() != '0xac7fbab5f54a3ca8194167523c6753bfeb96a445279294b6125b68cce2177054') {
 		return
 	}
