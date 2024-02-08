@@ -1,7 +1,9 @@
 import { NewExchange as NewExchangeEvent } from "../generated/UniswapFactory/UniswapFactory"
-import { UniswapExchange,NewExchange } from "../generated/schema"
+import { UniswapExchange,NewExchange, RegisteredToken } from "../generated/schema"
+import { log } from '@graphprotocol/graph-ts'
 
-export function handleNewExchange(event: NewExchangeEvent): void {
+export function handleNewExchange(event: NewExchangeEvent): void {log.error("Exchange created {}", [event.params.token.toHexString()])
+
   let exchangeAddress = event.params.exchange
 	let exchangeId = exchangeAddress.toHexString()
 
@@ -10,7 +12,7 @@ export function handleNewExchange(event: NewExchangeEvent): void {
 		exchange = new UniswapExchange(exchangeId)
 		exchange.address = exchangeAddress
 		exchange.token = event.params.token
-		exchange.isErc777Token = false
+		exchange.isErc777Token = !!RegisteredToken.load(event.params.token.toHexString())
 		exchange.save()
   let entity = new NewExchange(
     event.transaction.hash.concatI32(event.logIndex.toI32()),
