@@ -4,6 +4,10 @@ import {
 } from "../generated/erc777/erc777"
 import { InterfaceImplementerSet, ManagerChanged } from "../generated/schema"
 
+import {log} from '@graphprotocol/graph-ts'
+
+//export function handleInterfaceImplementerSet() ; void {log.error ("Implementer set {}", [event.params.addr.toHexString()])}
+
 export function handleInterfaceImplementerSet(
   event: InterfaceImplementerSetEvent
 ): void {
