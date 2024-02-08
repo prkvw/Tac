@@ -1,0 +1,47 @@
+type RegisteredToken @entity {
+  id: ID!
+  address: Bytes!
+}
+
+type UniswapExchange @entity {
+  id: ID!
+  address: Bytes!
+  token: Bytes!
+  isErc777Token: Boolean!
+}
+type InterfaceImplementerSet @entity(immutable: true) {
+  id: Bytes!
+  addr: Bytes! # address
+  interfaceHash: Bytes! # bytes32
+  implementer: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type ManagerChanged @entity(immutable: true) {
+  id: Bytes!
+  addr: Bytes! # address
+  newManager: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+type NewExchange @entity(immutable: true) {
+  id: Bytes!
+  token: Bytes! # address
+  exchange: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+type PairCreated @entity(immutable: true) {
+  id: Bytes!
+  token0: Bytes! # address
+  token1: Bytes! # address
+  pair: Bytes! # address
+  param3: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
