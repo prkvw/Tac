@@ -5,7 +5,7 @@ import {
   clearStore,
   beforeAll,
   afterAll
-} from "matchstick-as/assembly/index"
+} from "matchstick-as"
 import { Address, Bytes } from "@graphprotocol/graph-ts"
 import { InterfaceImplementerSet } from "../generated/schema"
 import { InterfaceImplementerSet as InterfaceImplementerSetEvent } from "../generated/Contract/Contract"
