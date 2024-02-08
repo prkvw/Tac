@@ -1,0 +1,18 @@
+type InterfaceImplementerSet @entity(immutable: true) {
+  id: Bytes!
+  addr: Bytes! # address
+  interfaceHash: Bytes! # bytes32
+  implementer: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type ManagerChanged @entity(immutable: true) {
+  id: Bytes!
+  addr: Bytes! # address
+  newManager: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
