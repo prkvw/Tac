@@ -1,0 +1,8 @@
+{
+  "mainnet": {
+    "Uniswap V1": {
+      "address": "0xc0a47dFe034B400B47bDaD5FecDa2621de6c4d95",
+      "startBlock": 6627917
+    }
+  }
+}

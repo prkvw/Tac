@@ -1,0 +1,26 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Uniswap V1
+    network: mainnet
+    source:
+      address: "0xc0a47dFe034B400B47bDaD5FecDa2621de6c4d95"
+      abi: Uniswap V1
+      startBlock: 6627917
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - NewExchange
+      abis:
+        - name: Uniswap V1
+          file: ./abis/Uniswap V1.json
+      eventHandlers:
+        - event: NewExchange(indexed address,indexed address)
+          handler: handleNewExchange
+      file: ./src/uniswap-v-1.ts
