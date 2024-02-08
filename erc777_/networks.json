@@ -1,0 +1,14 @@
+{
+  "mainnet": {
+    "Contract": {
+      "address": "0x1820a4B7618BdE71Dce8cdc73aAB6C95905faD24",
+      "startBlock": 7496550
+    },
+    "UniswapFactory": {
+      "address": "0xc0a47dFe034B400B47bDaD5FecDa2621de6c4d95"
+    },
+    "UniswapV2": {
+      "address": "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f"
+    }
+  }
+}
